@@ -1,0 +1,9 @@
+*, body, p, div {margin: 0; padding: 0;}
+#menu {background: #444; width: 100%;}
+#logo {float: left; padding: 5px;}
+#logo:hover {background: orange;}
+#logo a, #logo a:visited {color: white}
+#menu ul li {display: inline-block; padding: 5px; background: #dddddd;}
+.w33 {width: 33%;}
+.w66 {width: 66%;}
+.w100 {width: 100%;}

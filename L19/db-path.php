@@ -5,3 +5,5 @@
  * Date: 21.8.2017 г.
  * Time: 16:53 ч.
  */
+$path = "db/";
+$products = $path . "prduct.txt";
