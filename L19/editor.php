@@ -5,6 +5,11 @@
  * Date: 21.8.2017 г.
  * Time: 01:13 ч.
  */
+require_once "config.php";
+$myFileName = $path . "myDB.txt";
+$myFile = fopen($myFileName, "a");
+fclose($myFile);
+
 ?>
 <!doctype html>
 <html lang="en">

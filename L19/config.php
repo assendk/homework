@@ -6,4 +6,3 @@
  * Time: 16:53 ч.
  */
 $path = "db/";
-$products = $path . "prduct.txt";
