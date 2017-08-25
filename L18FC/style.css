@@ -1,0 +1,7 @@
+*, body, p {margin: 0; padding: 0}
+#header {height: 50px; background: #444444;}
+#menu ul li {display: inline-block;}
+#header div {display: inline-block}
+
+/* footer */
+#footer {height: 200px; background: #444444}
