@@ -44,18 +44,27 @@ if(isset($_POST["new-note"])){
     $new_note_index = $_SESSION["notesCount"]+1;
     $new_note = [];
     $new_note["$new_note_index"] = [];
-    $new_note["$new_note_index"]["title"] = $_POST["title"];
+    $new_note["$new_note_index"]["title"] = htmlentities($_POST["title"]);
     $new_note["$new_note_index"]["date"] = $note_date;
-    $new_note["$new_note_index"]["priority"] = $_POST["priority"];
-    $new_note["$new_note_index"]["content"] = $_POST["content"];
+    $new_note["$new_note_index"]["priority"] = htmlentities($_POST["priority"]);
+    $new_note["$new_note_index"]["content"] = htmlentities($_POST["content"]);
     //add the note
     $user_notes = json_decode(file_get_contents($user_folder.$loged_user."-notes.json"),true);
     $add_the_note = array_merge($user_notes,$new_note);
     file_put_contents($user_folder.$loged_user."-notes.json", json_encode($add_the_note));
     header("location: main.php");
-
 }
+$id_del = "";
+if(isset($_POST["delete"])) {
+    $id_del = $_POST["note-to-del"];
+    $user_notes = json_decode(file_get_contents($user_folder.$loged_user."-notes.json"),true);
+    $value_remove = [];
+    $value_remove = ["$id_del" => ""];
 
+    $del_result = array_diff_key($user_notes, $value_remove);
+    file_put_contents($user_folder.$loged_user."-notes.json", json_encode($del_result));
+    header("location: main.php");
+}
 
 require_once "header.php";
 ?>
@@ -78,10 +87,12 @@ require_once "header.php";
     <div class="note-list">
 <?php
     $user_notes_list = json_decode(file_get_contents($user_folder.$loged_user."-notes.json"),true);
+    //var_dump($user_notes_list);
     echo "<ul class=\"note\">";
-    foreach ($user_notes_list as $row) {
+
+    foreach ($user_notes_list as $key => $row) {
             echo "<li>";
-            echo "<strong>" . $row["title"]."</strong> [".$row["priority"]. "]<br>";
+            echo "<strong>" . $row["title"]."</strong> [".$row["priority"]. "] id($key)<br>";
             echo "<span class=\"note-date\">" .$row["date"]."</span><br>";
 
             echo $row["content"]."<br>";
@@ -107,6 +118,13 @@ require_once "header.php";
             Content:<br>
             <textarea name="content" id="" cols="50" rows="4"></textarea><br>
             <input type="submit" name="new-note" value="Add">
+        </form>
+    </div>
+    <div id="delete-note">
+        <form action="" method="post">
+            enter id to delete
+            <input type="text" name="note-to-del">
+            <input type="submit" name="delete" value="delete">
         </form>
     </div>
 </div>
