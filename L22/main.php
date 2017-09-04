@@ -77,8 +77,9 @@ require_once "header.php";
 <h1>My notes</h1>
     <div class="note-list">
 <?php
+    $user_notes_list = json_decode(file_get_contents($user_folder.$loged_user."-notes.json"),true);
     echo "<ul class=\"note\">";
-    foreach ($user_notes as $row) {
+    foreach ($user_notes_list as $row) {
             echo "<li>";
             echo "<strong>" . $row["title"]."</strong> [".$row["priority"]. "]<br>";
             echo "<span class=\"note-date\">" .$row["date"]."</span><br>";
