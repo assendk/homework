@@ -2,7 +2,8 @@
 $usersDB = "files/users.json";
 $user_folder = "files/";
 
-$siteName = "Custom text";
+$siteName = "My notes";
+
 $note_date = date("Y-m-d, H:i");
 
 /* function create_dummy_note($loged_user){
