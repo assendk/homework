@@ -11,6 +11,7 @@ if(isset($_GET["page"])) {
 } else {
     echo "<h1>THis is Homepage</h1>";
     echo "<a href=\"?page=contacts\">Kontakti</a>";
+    echo "<a href=\"?page=products\">Products</a>";
 
 }
 ?>

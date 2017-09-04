@@ -1,0 +1,39 @@
+*, body, div, p {margin: 0; padding: 0; font-family: Verdana, Arial, sans-serif}
+/* header */
+#header {height: 30px; padding: 5px;
+    background: #444444;
+    color: white;
+}
+#header div {float: left}
+#logo {padding: 2px 15px;}
+#logo a {color: orange; text-decoration: none}
+#menu {margin: 0 0 0 20px;}
+#menu ul li {display: inline-block; padding: 2px 5px;}
+#menu ul li a, #menu ul li a:visited  {color: white; display: block;}
+#menu ul li:hover  {background: orange;}
+
+#user_id {position: fixed; top: 0; right: 20px; width: 200px; float: right; background: #18185b; padding: 2px; z-index: 10; color: white}
+#user_id input {display: inline;}
+#user_id form {display: inline}
+/* main */
+#main {}
+.forma {width: 480px; padding: 10px; margin: 10px auto; border: 1px solid crimson; border-radius: 5px;}
+.main-content {width: 1100px; margin: 10px auto; padding: 20px; border: 1px solid #dddddd; border-radius: 5px;}
+/* notes */
+ul.note li {display: inline-block; padding:10px; margin: 0 5px 5px 0; width: 300px; list-style: none; border: 1px dotted crimson; border-radius: 5px;}
+.note-date {color: #7a7a7a; font-size: 0.8em;}
+
+.err-msg {color: crimson;}
+/* footer */
+#footer {
+    height: 100px;
+    padding: 5px;
+    background: #444444;
+    color: white;
+}
+
+.list {display: inline-block;}
+.list li {width: 150px; border: 1px solid crimson; margin: 5px 0 0 10px;}
+
+
+/* messages */

@@ -1,12 +1,10 @@
 <?php
-
-
 ?>
-<div>
+<div id="menu">
     <ul>
-        <li><a href="Home"></a></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
+        <li><a href="main.php">Main</a></li>
     </ul>
 </div>
