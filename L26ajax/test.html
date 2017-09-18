@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function myFunc() {
+            //document.getElementById("test").innerHTML = "";
+            var inDiv = document.getElementById("test");
+            var ula = document.createElement("ul");
+
+            for (var i =0; i <= 5; i++)  {
+                var lita = document.createElement("li");
+                lita.innerHTML = "test";
+                ula.appendChild(lita);
+            }
+            inDiv.appendChild(ula);
+        };
+        function cleara() {
+            document.getElementById("test").innerHTML = "";
+
+        }
+        
+    </script>
+</head>
+<body>
+<button type="button" onclick="myFunc()">Click Me!</button><button type="button" onclick="cleara()">Clear!</button>
+<div id="test"></div>
+</body>
+</html>
