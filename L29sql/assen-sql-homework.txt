@@ -41,3 +41,9 @@ ON (e.department_id = d.department_id)
 WHERE e.hire_date > CAST('1992-1-1' AS DATE)
 and d.department_name like '%'
 order by e.salary DESC
+====================
+[Filer by name]
+SELECT e.first_name, e.last_name
+FROM employees as e
+WHERE e.first_name like 'D%'
+ORDER by e.first_name
