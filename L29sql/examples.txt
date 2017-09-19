@@ -32,6 +32,12 @@ SELECT CONCAT(e.first_name, ' ', e.last_name, ' with boss ', m.last_name) as 'Co
 FROM employees as e
 JOIN employees as m
 ON (e.manager_id = m.employee_id)
+
+
+SELECT f.first_name as 'Worker', m.first_name as 'Manager'
+FROM employees as f
+JOIN employees as m
+ON (f.manager_id = m.employee_id)
 ==================
 Complex join
 SELECT e.first_name, e.last_name, d.department_name, e.hire_date, e.salary
