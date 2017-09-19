@@ -1,0 +1,57 @@
+//from course
+SELECT department_id, department_name, location_id, city
+FROM departments NATURAL JOIN locations
+
+SELECT e.employee_id, e.last_name, d.location_id, d.department_name
+FROM employees as e left join departments as d
+USING (department_id);
+==================
+SELECT e.employee_id, e.first_name, e.last_name, e.department_id, 
+d.department_id, d.location_id, d.department_name  
+FROM employees e join departments d
+-- USING (department_id);
+ON (e.department_id = d.department_id)
+===============
+SELECT CONCAT(e.first_name, ' ', e.last_name) as 'Manager name', 
+d.department_id, d.department_name
+FROM employees e LEFT OUTER JOIN departments d
+ON (e.employee_id = d.manager_id)
+=====================
+SELECT CONCAT(e.first_name, ' ', e.last_name) as 'Manager name', 
+d.department_name, d.department_id, loc.city
+FROM employees as e
+
+JOIN departments as D
+ON d.department_id = e.department_id
+
+JOIN locations as loc
+ON d.location_id = loc.location_id
+===========================
+Self join
+SELECT CONCAT(e.first_name, ' ', e.last_name, ' with boss ', m.last_name) as 'Column name' 
+FROM employees as e
+JOIN employees as m
+ON (e.manager_id = m.employee_id)
+==================
+Complex join
+SELECT e.first_name, e.last_name, d.department_name, e.hire_date, e.salary
+FROM employees as e LEFT JOIN departments as d
+-- USING (department_id)
+ON (e.department_id = d.department_id)
+WHERE e.hire_date > CAST('1992-1-1' AS DATE)
+and d.department_name like '%'
+order by e.salary DESC
+====================
+[Filer by name]
+SELECT e.first_name, e.last_name
+FROM employees as e
+WHERE e.first_name like 'D%'
+ORDER by e.first_name
+[with limit 3]
+SELECT e.first_name, e.last_name, e.salary
+FROM employees as e
+WHERE e.first_name like 'a%'
+ORDER by e.first_name
+limit 3
+-- limit 3 OFFSET 1
+===================
