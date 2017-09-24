@@ -12,3 +12,47 @@ USING (manager_id)
 >Task 2
 SELECT d.department_id, d.department_name
 FROM departments as d
+
+>Taks 3
+select employee_id, salary as month, salary/20 as daily, salary/20/8 as hourly 
+FROM hr.employees ORDER by employee_id
+
+>Taks 4
+SELECT CONCAT(LOWER(last_name),'@mail.somecompany.com') as 'Full Email Address' FROM employees
+
+>Task 5
+SELECT DISTINCT salary FROM employees ORDER by salary DESC
+
+>Task 6
+SELECT department_name FROM departments
+UNION
+SELECT country_name FROM countries
+UNION
+SELECT city FROM locations
+
+>Task 7
+SELECT * FROM employees WHERE job_id = 'AC_MGR'
+
+>Task 8
+SELECT * FROM employees WHERE first_name LIKE 'Sa%'
+
+>Task 9
+SELECT * FROM employees WHERE last_name LIKE '%ei%'
+
+>Task 10
+SELECT first_name, last_name, salary FROM employees WHERE salary >= 3000 AND salary <= 5000
+
+>Task 11
+SELECT salary 
+FROM employees
+WHERE (salary between 2000 and 15000) - (salary between 5000 and 10000)
+ORDER by salary ASC
+
+>Task 12
+SELECT employee_id, last_name, salary
+FROM employees 
+WHERE salary IN (2500, 4000, 5000)
+
+>Task 13
+SELECT * FROM locations
+WHERE state_province | postal_code IS NULL
