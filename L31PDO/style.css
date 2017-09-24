@@ -1,1 +1,28 @@
+*, body, p, div {margin: 0; padding: 0; font-family: Verdana, Arial, sans-serif;}
+#header { padding: 5px; background: #444; color: white;}
+#header li a, #header li a:visited {color: orange;}
 #menu ul li {display: inline}
+
+#main {width: 1100px; margin: 10px auto;}
+.bordered td {border: 1px dotted crimson; padding: 2px 10px;}
+input, select {padding: 5px}
+
+.buttong {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.buttong {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.buttong:hover {
+    background-color: #8faf68; /* Green */
+    color: #f6ffbd;
+}

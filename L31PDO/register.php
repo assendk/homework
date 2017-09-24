@@ -21,13 +21,14 @@ if(isset($_POST["submit-pdo"] )) {
     }
     try {
         $pdo->beginTransaction();
-        //$pdo->exec("INSERT INTO adk.homework (user_name, first_name, second_name,age,location_id,email) VALUE ('$user_name', '$first_name', '$second_name',$age,$location,'$email')");
-        $stmt = $pdo->exec("INSERT INTO adk.homework (user_name, first_name, second_name,age,location_id,email) VALUE (?,?,?,?,?,?)");
-        $params = array($user_name,$first_name,$second_name,$age,$location,$email);
+        //$stmt = $pdo->exec("INSERT INTO adk.homework (user_name, first_name, second_name,age,location_id,email) VALUES ('$user_name', '$first_name', '$second_name',$age,$location,'$email')");
+
+        $sql = "INSERT INTO adk.homework (`user_name`, `first_name`, `second_name`, `age`, `location_id`, `email`) VALUES (?, ?, ?, ?, ?, ?)";
+        //$sql = "INSERT INTO adk.homework (`user_name`, `first_name`, `second_name`) VALUES (?, ?, ?)";
+        //$sql = "INSERT INTO adk.homework (`user_name`, `first_name`) VALUES (?, ?)";
+        $stmt = $pdo->prepare($sql); // must be prepare
+        $params = array($user_name, $first_name, $second_name, $age, $location, $email);
         $stmt->execute($params);
-        while ($row = $stmt->fetch()) {
-            echo "<p>" . $row['user_name'] . " | " . $row['first_name']."</p>";
-        }
         $pdo->commit();
 
         $success = true;
@@ -42,7 +43,7 @@ if(isset($_POST["submit-pdo"] )) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reg.</title>
+    <title>Register</title>
     <link rel="stylesheet" href="style.css">
     <style>
         td {border: 1px solid black;}
@@ -50,14 +51,24 @@ if(isset($_POST["submit-pdo"] )) {
 </head>
 <body>
 <?php include "menu.php"; ?>
+<div id="main">
+    <h1>Register</h1>
 <form action="" method="post">
     username: <input type="text" name="user_name"><br>
     name: <input type="text" name="first_name"><br>
     family: <input type="text" name="second_name"><br>
-    age: <input type="number" name="age" maxlength="2"><br>
-    address: <input type="number" name="location" maxlength="2"><br>
+    age: <input type="number" name="age" maxlength="2" value="20"><br>
+     address:
+    <select name="location" class="dropdowng">
+        <option value="1" selected>Sofia</option>
+        <option value="2">Plovdiv</option>
+        <option value="3">Varna</option>
+        <option value="4">Burgas</option>
+        <option value="5">Other</option>
+    </select><br>
+    <!-- address: <input type="number" name="location"><br> -->
     email: <input type="email" name="email"><br>
-    <input class="button" type="submit" name="submit-pdo" value="input">
+    <input type="submit" name="submit-pdo" value="input">
 </form>
 <?php
     if($success) {
@@ -75,6 +86,6 @@ if(isset($_POST["submit-pdo"] )) {
     }
 
 ?>
-
+</div>
 </body>
 </html>

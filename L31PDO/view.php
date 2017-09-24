@@ -19,17 +19,22 @@ require_once "pdo.php";
 </head>
 <body>
 <?php include "menu.php"; ?>
+<div id="main">
 <h1>View</h1>
 <?php
 $result ="";
 try {
     $stmt = $pdo->query("SELECT user_name, first_name, age FROM adk.homework");
+    echo "<table class='bordered'>";
     while ($row = $stmt->fetch()) {
-        echo "<p>" . $row['user_name'] . " | " . $row['first_name'] . " | " . $row['age']."</p>";
+        echo "<tr>";
+        echo "<td>" . $row['user_name'] . "</td><td>" . $row['first_name'] . "</td><td>" . $row['age']."</td>";
+        echo "</tr>";
     }
+    echo "<table>";
     $ncols = $stmt->columnCount();
     $ecols = $stmt->rowCount();
-    echo "cols: ". $ncols. $ecols;
+    echo "cols: ". $ncols. " rows: " . $ecols;
 }
 
 catch (PDOException $e) {
@@ -39,5 +44,6 @@ $error = $e->getMessage();
 
 
 ?>
+</div>
 </body>
 </html>
