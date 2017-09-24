@@ -1,3 +1,35 @@
+CREATE TABLE adk.homework 
+(
+id int NOT NULL auto_increment,
+first_name varchar(50),
+second_name varchar(50),
+age int,
+city varchar(55)
+-- PRIMARY KEY (ID)
+CONSTRAINT PK_Person PRIMARY KEY (ID,first_name)
+)
+
+ALTER SCHEMA `adk`  DEFAULT CHARACTER SET utf8  DEFAULT COLLATE utf8_general_ci ;
+
+-- ALTER TABLE homework CHANGE COLUMN u_passw password VARCHAR(48) NOT NULL
+ALTER TABLE homework MODIFY id int UNIQUE NOT NULL auto_increment
+
+-- ALTER TABLE homework ADD user_name VARCHAR(24) not null
+-- ALTER TABLE homework MODIFY password varchar(16) AFTER second_name
+-- ALTER TABLE homework ADD email varchar(64) AFTER password
+-- ALTER TABLE homework MODIFY id int auto_increment not null
+ALTER TABLE homework collate utf8_general_ci
+
+
+==== actualizacia danni !!! ==============
+UPDATE adk.homework
+set age=43
+where id=1
+=============================
+DELETE column
+ALTER TABLE `homework` DROP `homeworkcol`;
+
+
 //from course
 SELECT department_id, department_name, location_id, city
 FROM departments NATURAL JOIN locations
