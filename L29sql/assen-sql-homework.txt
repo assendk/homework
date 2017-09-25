@@ -99,3 +99,49 @@ SELECT a.department_name, b.city, b.state_province from departments as a
 LEFT JOIN locations as b
 ON a.location_id = b.location_id
 
+>Task 22
+SELECT a.department_name, b.city from departments as a, locations as b
+WHERE a.location_id = b.location_id
+
+>Task 23
+SELECT DISTINCT a.department_name, b.manager_id, c.first_name from departments as a
+LEFT JOIN employees as b
+ON a.manager_id = b.manager_id
+-- ORDER by a.department_name ASC
+LEFT JOIN employees as c
+ON a.manager_id = c.employee_id
+
+>Task 24
+SELECT DISTINCT a.department_name, b.manager_id, c.first_name, l.city from departments as a
+LEFT JOIN employees as b
+ON a.manager_id = b.manager_id
+-- ORDER by a.department_name ASC
+LEFT JOIN employees as c
+ON a.manager_id = c.employee_id
+LEFT JOIN locations as l
+ON a.location_id = l.location_id
+
+>Task 25
+SELECT employee_id, first_name, last_name, d.department_name, e.hire_date
+FROM employees as e
+JOIN departments as d
+ON e.department_id = d.department_id
+WHERE e.hire_date between '1995-01-01' and '2000-01-01'
+and (d.department_id = 80 or d.department_id = 100)
+ORDER by e.hire_date ASC
+
+>Task 26
+SELECT employee_id, first_name, last_name, d.department_name, e.hire_date
+FROM employees as e
+JOIN departments as d
+ON e.department_id = d.department_id
+WHERE e.hire_date between 1987-01-01 and curdate()
+-- WHERE e.hire_date between min(e.hire_date) and curdate()
+and d.department_id = 80
+ORDER by e.hire_date ASC
+
+>TASK 27
+SELECT CONCAT (e.first_name, " ", e.last_name) as Employe, CONCAT (m.first_name, " ", m.last_name) as Manager
+FROM employees as e
+LEFT JOIN employees as m
+ON e.manager_id = m.employee_id
