@@ -56,3 +56,46 @@ WHERE salary IN (2500, 4000, 5000)
 >Task 13
 SELECT * FROM locations
 WHERE state_province | postal_code IS NULL
+
+>Task 14
+SELECT employee_id,first_name,last_name, salary
+FROM employees
+WHERE salary >= 10000
+ORDER by salary DESC
+
+>Task 15
+SELECT employee_id,first_name,last_name, hire_date
+FROM employees
+ORDER by hire_date ASC LIMIT 10
+
+>Task 16
+SELECT department_id, department_name, location_id, city from departments
+NATURAL JOIN locations
+
+>Task 17
+SELECT department_id, department_name, location_id, city from departments
+JOIN locations
+USING(location_id)
+
+>Task 18
+SELECT a.department_name, b.city from departments as a
+INNER JOIN locations as b
+ON a.location_id = b.location_id
+
+>Task 19 UNFINISHED
+SELECT a.department_name, b.city, c.first_name from departments as a
+INNER JOIN locations as b
+ON a.location_id = b.location_id
+JOIN employees as c
+ON a.manager_id = c.manager_id
+
+>Task 20 - 43 rows
+SELECT a.department_name, b.city from departments as a
+RIGHT JOIN locations as b
+ON a.location_id = b.location_id
+
+>Task 21
+SELECT a.department_name, b.city, b.state_province from departments as a
+LEFT JOIN locations as b
+ON a.location_id = b.location_id
+
