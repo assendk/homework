@@ -1,0 +1,9 @@
+task 1
+SELECT avg(salary)
+FROM employees
+WHERE department_id = 80
+
+tast 2
+SELECT COUNT(*)
+FROM employees
+WHERE department_id = 80

@@ -145,3 +145,11 @@ SELECT CONCAT (e.first_name, " ", e.last_name) as Employe, CONCAT (m.first_name,
 FROM employees as e
 LEFT JOIN employees as m
 ON e.manager_id = m.employee_id
+
+>Task 28
+SELECT a.first_name, b.last_name FROM employees as a
+CROSS JOIN employees as b
+-- ON a.first_name = b.last_name
+ORDER by first_name ASC
+
+
