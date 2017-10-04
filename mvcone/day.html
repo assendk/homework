@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="day.js">
+
+    </script>
+    <script>
+        function openWindow(url)
+        {
+            window.open(url,"_self");
+        }
+        function changeDisplay(id) {
+            var element = document.getElementById(id);
+            if (element.style.display == 'none') {
+                element.style.display = 'block';
+        }
+        else { element.style.display = 'none'; }
+
+        }
+
+    </script>
+</head>
+<body>
+<h1 id="aa1" class="cls1">aa1</h1>
+<script type="text/javascript">
+    document.write(getDayName());
+</script>
+<div>
+    <a href="javascript:changeDisplay('aa1')">JavaScript</a>
+</div>
+<script type="text/javascript">
+    document.title=window.location.protocol + ' manja';
+    document.getElementById("aa1").innerHTML="proba " + window.location.protocol;
+    document.write("<h2>Subheading</h2>")
+
+</script>
+<p class="cls1">asadadas</p>
+<a class="cls1" href="javascript:openWindow('index.php')">open window</a>
+<button onclick="changeDisplay('aa1')">sdfdsfs</button>
+<script type="text/javascript">
+    var myx = document.getElementsByClassName("cls1");
+    myx.style.backgroundColor = "red";
+
+</script>
+</body>
+</html>

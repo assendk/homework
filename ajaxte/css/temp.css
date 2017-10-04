@@ -1,0 +1,145 @@
+/*
+* Author : Ali Aboussebaba
+* Email : bewebdeveloper@gmail.com
+* Website : http://www.bewebdeveloper.com
+* Subject : Using Ajax with PHP/MySQL
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding: 10px;
+    background: #eaeaea;
+    text-align: center;
+    font-family: arial;
+    font-size: 12px;
+    color: #333333;
+}
+#menu {
+    width: 100%;
+    background: #333333;
+    padding: 10px;
+}
+#menu ul li {display: inline-block;}
+.container {
+    width: 1000px;
+    height: auto;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    margin: auto;
+    text-align: left;
+}
+#menu ul li a {color: white;}
+.header {
+    padding: 10px;
+}
+.main_title {
+    background: #cccccc;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 20px;
+}
+.content {
+    padding: 10px;
+    min-height: 100px;
+}
+.footer {
+    padding: 10px;
+    text-align: right;
+}
+.footer a {
+    color: #999999;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.field_container {
+    padding: 10px;
+    margin: 0 0 10px 0;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+}
+.field_container legend {
+    padding: 0 5px 0 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.input_container {
+    height: 30px;
+    float: left;
+}
+.frm_input {
+    height: 20px;
+    width: 200px;
+    padding: 3px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin: 0 5px 0 0;
+}
+.frm_button {
+    height: 28px;
+    width: 100px;
+    padding: 3px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background: #999999;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.frm_button:hover {
+    background: #cccccc;
+}
+.table_list {
+    width: 100%;
+    border: 0;
+}
+.table_list td, .table_list th {
+    padding: 2px;
+}
+.delete_m {
+    color: #666666;
+    text-decoration: none;
+    font-weight: bold;
+}
+.delete_m:hover {
+    color: #999999;
+}
+.delete_m img {
+    height: 12px;
+}
+.bg_h {
+    background: #8d8b8b;
+    color: #ffffff;
+    text-align: center;
+}
+.bg_1 {
+    background: #e3e2e2;
+    text-align: center;
+}
+.bg_2 {
+    background: #c0bfbf;
+    text-align: center;
+}
+#list_container {
+    text-align: center;
+}
+
+.container .btn {
+    color: #ffffff;
+    font-size: 20px;
+    background: #3498db;
+    padding: 5px 20px;
+    border: solid #1f628d 2px;
+    text-decoration: none;
+}
+
+.container .btn:hover {
+    background: #3cb0fd;
+    text-decoration: none;
+}

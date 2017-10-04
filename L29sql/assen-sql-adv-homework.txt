@@ -3,7 +3,22 @@ SELECT avg(salary)
 FROM employees
 WHERE department_id = 80
 
-tast 2
+task 2
 SELECT COUNT(*)
 FROM employees
 WHERE department_id = 80
+
+task 3
+SELECT COUNT(location_id) FROM locations
+
+task 4
+SELECT COUNT(*) FROM departments
+WHERE manager_id IS NOT NULL
+
+task 5
+
+6--
+SELECT d.department_name, round(avg(e.salary)) as avg_salary from employees e
+JOIN departments as d
+ON e.department_id = d.department_id
+GROUP by d.department_id
