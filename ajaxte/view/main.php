@@ -1,4 +1,7 @@
 <?php
+if(empty($_GET['sort_element']) || empty($_GET['sort_type'])){
+    header("location: main.php?sort_element=ti_price&sort_type=asc");
+}
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }

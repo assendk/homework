@@ -1,4 +1,15 @@
 <?php
+$sortingCode = "";
+$sort_element = "ti_price";
+$sort_type = "asc";
+
+if (isset($_REQUEST['sort_element']) && $_REQUEST['sort_element'] != "") {
+    $sort_element = " ORDER BY ".$_REQUEST['sort_element']." ";
+}
+if (isset($_REQUEST['sort_type']) && $_REQUEST['sort_type'] != "") {
+    $sort_type = " ".$_REQUEST['sort_type']." ";
+}
+$sortingCode = "$sort_element $sort_type";
 
 ?>
 
@@ -6,7 +17,16 @@
     <tr class="bg_h">
         <th>image</th>
         <th>Offer</th>
-        <th>price</th>
+        <!-- <th>price</th> -->
+        <th>
+            <a title="Click to sort by Age" href="../view/main.php?sort_element=ti_price&sort_type=<?php echo ($_REQUEST["sort_element"] == "ti_price"  && $_REQUEST["sort_type"] == "asc") ? "desc" : "asc"; ?>">Price
+                <?php if ($_REQUEST["sort_element"] == "ti_price" ) {  if($_REQUEST["sort_type"] == "desc" ) { ?>
+                    <span>asc</span>
+                <?php } else { ?>
+                    <span>Desc</span>
+                <?php } } ?>
+            </a>
+        </th>
         <th>Delete</th>
     </tr>
     <?php
@@ -22,7 +42,8 @@
     require_once "../model/config.php";
     $pdo = connect();
 
-    $sql = "SELECT * FROM tickets WHERE ti_owner=$user_id ORDER BY ti_price ASC";
+    //$sql = "SELECT * FROM tickets WHERE ti_owner=$user_id ORDER BY ti_price ASC";
+    $sql = "SELECT * FROM tickets WHERE ti_owner=$user_id AND 1 $sortingCode";
     $query = $pdo->prepare($sql);
     $query->execute();
     $list = $query->fetchAll();
@@ -33,7 +54,10 @@
             <td><img height="60" width="auto" src="..<?php echo $rows['img_url']; ?>" alt=""></td>
             <td><?php echo $rows['ti_text']; ?></td>
             <td><?php echo $rows['ti_price']; ?>$</td>
-            <td><a href="#" class="delete_m" onclick="delete_ticket(<?php echo $rows['id']; ?>)">Delete</a></td>
+            <td><a href="#" class="delete_m" onclick="delete_ticket(<?php echo $rows['id']; ?>)">Delete</a> |
+                <a href="../view/edit-ticket.php?id=<?= $rows['id'] ?>">Edit</a>
+
+            </td>
         </tr>
 
         <?php
