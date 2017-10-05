@@ -50,7 +50,11 @@ if(isset($_POST['loginf'])){
             //Provide the user with a login session.
             $_SESSION['user_id'] = $user['id'];
             $_SESSION["username"] = $user["username"];
-            $_COOKIE["username"] = $user["username"];
+            $coo_name = "usernamec";
+            $coo_username = $user["username"];
+            //setcookie($coo_name, $coo_username, time() + (86400 * 30), "/");
+            $user_from_base =
+            $_COOKIE["usernamec"] = $user["username"];
             $_SESSION['logged_in'] = time();
 
             //Redirect to our protected page, which we called home.php

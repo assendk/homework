@@ -43,5 +43,5 @@
 
 .table_list td {border: 1px solid #a4a4a4; padding: 0 5px;}
 #main-content div {}
-#main {float: left }
-.login {width: 200px; float: right}
+#main2 {display: inline; width: 300px; float: right}
+.forma {width: 500px; display: inline-block}

@@ -1,3 +1,6 @@
+<?php
+setcookie("usernamec","");
+?>
 <!DOCTYPE html>
 <html>
 <head>

@@ -92,9 +92,15 @@ function getImagesForUser($owner_id, $page = 1){
     }
 }
 
-function insertImage($image_url, $owner_id){
+function insertImage($img_url, $owner_id){
         $pdo = connect();
-        $stm = $pdo->prepare("INSERT INTO images (image_url, owner_id) VALUES (?, ?)");
-        $params = array($image_url, $owner_id);
+        $stm = $pdo->prepare("INSERT INTO tickets (img_url, owner_id) VALUES (?, ?)");
+        $params = array($img_url, $owner_id);
         $stm->execute($params);
+}
+function insertTicketInfo($img_url = "../images/delete.png", $ti_text, $ti_price, $ti_owner){
+    $pdo = connect();
+    $stm = $pdo->prepare("INSERT INTO tickets (img_url, ti_text, ti_price, ti_owner) VALUES (?, ?, ?, ?)");
+    $params = array($img_url, $ti_text, $ti_price, $ti_owner);
+    $stm->execute($params);
 }

@@ -10,6 +10,11 @@ if(isset($_POST["login_submit"])){
     if($user !== false){
         //success
         $_SESSION["user_id"] = $user["id"];
+        $_SESSION["username"] = $user["username"];
+        $cuname = $username["username"];
+        //setcookie("cusernamec", $cuname);
+        $_COOKIE["usernamec"] = $cuname;
+        $_COOKIE["err"] = 0;
         header("Location:../view/main.php");
     }
     else{

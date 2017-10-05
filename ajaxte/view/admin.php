@@ -5,7 +5,7 @@ session_start();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Using Ajax with PHP/MySQL</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="../css/style.css" />
     <script type="text/javascript" src="../js/script.js"></script>
 </head>
@@ -15,6 +15,11 @@ session_start();
     <?php include "menu.php" ?>
     <h1 class="main_title">Admin</h1>
     <div class="content">
+        <?php
+            if(isset($_SESSION["username"]) == "admin") {
+                $visible = true;
+            }
+        ?>
         <fieldset class="field_container">
             <legend> Add new member </legend>
             <form>
@@ -40,7 +45,7 @@ session_start();
         </fieldset>
         <div id="additional_commands">
             <form action=""></form>
-            <button id="purge" class="delete_m" onclick="purgeDelete()">Purge deleted</button>
+            <button id="purge" class="frm_button" onclick="purgeDelete()">Purge deleted</button> Manual reload
         </div>
     </div><!-- content -->
 
