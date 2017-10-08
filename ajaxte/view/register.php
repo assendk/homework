@@ -11,8 +11,8 @@ if (session_status() == PHP_SESSION_NONE) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Regiser</title>
-    <link rel="stylesheet" href="../css/style.css"/>
-    <script type="text/javascript" src="../js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
 <div class="container">

@@ -14,7 +14,7 @@ function add_member() {
 	params += '&email='+document.getElementById('email').value;
 	params += '&age='+document.getElementById('age').value;
 	var container_id = 'list_container' ;
-	var loading_text = '<img src="images/ajax_loader.gif">' ;
+	var loading_text = '<img src="view/images/ajax_loader.gif">' ;
 	// call ajax function
 	ajax (url, method, params, container_id, loading_text) ;
 }
@@ -27,7 +27,7 @@ function delete_member(id) {
 		var method = 'POST';
 		var params = 'id='+id;
 		var container_id = 'list_container' ;
-		var loading_text = '<img src="images/ajax_loader.gif">' ;
+		var loading_text = '<img src="view/images/ajax_loader.gif">' ;
 		// call ajax function
 		ajax (url, method, params, container_id, loading_text) ;
 	}

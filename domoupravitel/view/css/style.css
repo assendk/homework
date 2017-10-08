@@ -1,0 +1,29 @@
+*, body {font-family: Verdana, Arial, sans-serif;}
+
+#container {width: 800px; margin: 0 auto;
+    padding: 20px;
+    border: solid 1px #d7d7d7;
+    border-radius: 5px;
+}
+
+/* forms label */
+.reglog label {
+    display: inline-block;
+    width: 130px;
+    text-align: right;
+}
+
+#menu {
+    width: 100%;
+    background: #333333;
+    /* padding: 10px;*/
+}
+#menu ul li {display: inline-block;}
+
+#menu ul li a {color: white;}
+
+.errmsg { background-color: crimson; color: white}
+
+.table_list {border: 1px solid #333333; border-spacing: 0; border-collapse: collapse;
+width: 98%; margin: 5px auto;}
+.table_list th, .table_list td {border: 1px solid #aeaeae; padding: 0 5px;}

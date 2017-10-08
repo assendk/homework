@@ -3,7 +3,7 @@
 <div id="menu" style="display: block">
     <div id="menu-list">
         <ul>
-            <li><a href="main.php>My page</a></li>
+            <li><a href="main.php">My page</a></li>
             <li><a href="all-offers.php">All</a></li>
             <li><a href="login.php">LoginK</a></li>
             <li><a href="register.php">RegisterK</a></li>

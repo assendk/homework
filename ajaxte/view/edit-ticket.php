@@ -80,7 +80,7 @@ var_dump($img_url_old);
 <html>
 <head>
     <title>Edit Data</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>

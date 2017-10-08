@@ -12,35 +12,14 @@ function delete_ticket(id) {
         var url = '../controler/delete_ticket_controller.php';
         var method = 'POST';
         var params = 'id='+id;
-        //var container_id = 'list_container' ;
-        var container_id = 'field_container' ;
+        var container_id = 'list_container' ;
+        //var container_id = 'field_container' ;
         var loading_text = '<img src="images/ajax_loader.gif">' ;
         // call ajax function
         ajax (url, method, params, container_id, loading_text) ;
     }
 }
-function undelete_member(id) {
-    if (confirm('Are you sure to undelete this member ?')) {
-        // initialisation
-        var url = '../controler/undelete_member.php';
-        var method = 'POST';
-        var params = 'id='+id;
-        var container_id = 'field_container' ;
-        var loading_text = '<img src="../images/ajax_loader.gif">' ;
-        // call ajax function
-        ajax (url, method, params, container_id, loading_text) ;
-    }
-}
-function purgeDelete() {
-    if(confirm('Purge deleted?')) {
-        var url = '../controler/purge_deleted_controler.php';
-        var method = 'POST';
-        var container_id = 'list_container' ;
-        var loading_text = '<img src="../images/ajax_loader.gif">' ;
-        ajax (url, method, container_id, loading_text) ;
-    }
 
-}
 
 // ajax : basic function for using ajax easily
 function ajax (url, method, params, container_id, loading_text) {

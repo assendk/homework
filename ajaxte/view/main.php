@@ -18,9 +18,9 @@ if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"] ==""){
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Using Ajax with PHP/MySQL</title>
-    <link rel="stylesheet" href="../css/style.css"/>
-    <script type="text/javascript" src="../js/script.js"></script>
-    <script type="text/javascript" src="../js/tickets.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/tickets.js"></script>
 </head>
 
 <body>
