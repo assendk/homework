@@ -25,6 +25,7 @@ var_dump($username, $pass);
             $_SESSION["logedin"] = true;
             $_SESSION["user_id"] = $row['user_id'];
             $_SESSION["username"] = $row['name'];
+//            $_SESSION["family"] = $row['family_name'];
             header("location: member.php");
         }
         else {
