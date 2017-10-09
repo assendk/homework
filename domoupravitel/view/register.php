@@ -65,7 +65,7 @@ if (isset($_POST['register'])) {
         $errors[]="extension not allowed";
     }
 
-    $file_renamed = $target_path. $family_name."-".$apart_id.".". $ext;
+    $file_renamed = $target_path. $family_name."--".$apart_id.".". $ext;
     if(file_exists("$file_renamed")) {
         unlink($file_renamed);
     }
